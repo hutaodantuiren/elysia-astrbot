@@ -8,6 +8,11 @@
   <img alt="tts" src="https://img.shields.io/badge/TTS-CosyVoice2%20%7C%20GPT--SoVITS-9cf">
 </p>
 
+```bash
+git clone https://github.com/hutaodantuiren/elysia-astrbot.git
+cd elysia-astrbot
+```
+
 ---
 
 ## 这是什么
