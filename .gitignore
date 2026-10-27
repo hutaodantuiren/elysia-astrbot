@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# 插件运行时产物
+plugins/astrbot_plugin_elysia_voice/tmp/
+plugins/astrbot_plugin_elysia_voice/config.json
+
+# 模型与参照音里的临时转写
+models/
+refs/
+prompt-text.json
+*.wav.tmp
+
+# 本地测试产物
+test.wav
+out.wav
+*.mp3
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

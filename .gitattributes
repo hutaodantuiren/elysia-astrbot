@@ -1,0 +1,13 @@
+* text=auto
+
+# 脚本保持各自的换行符，避免在另一平台直接跑不起来
+*.sh   text eol=lf
+*.ps1  text eol=crlf
+*.bat  text eol=crlf
+
+# 音频按二进制存，避免被当成文本转换
+*.wav  binary
+*.mp3  binary
+
+# Markdown 统一 LF，方便 diff
+*.md   text eol=lf

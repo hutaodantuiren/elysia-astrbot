@@ -1,0 +1,42 @@
+{
+  "api_url": {
+    "type": "string",
+    "description": "TTS 接口地址（必须返回音频，见 config/api-contract.md）",
+    "default": "http://127.0.0.1:9880/api/tts"
+  },
+  "api_key": {
+    "type": "string",
+    "description": "接口鉴权令牌（可选，会以 Authorization: Bearer 发送）",
+    "default": ""
+  },
+  "text_field": {
+    "type": "string",
+    "description": "请求体中「要念的文本」字段名",
+    "default": "text"
+  },
+  "ref_field": {
+    "type": "string",
+    "description": "请求体中「参照音」字段名",
+    "default": "ref"
+  },
+  "default_ref": {
+    "type": "string",
+    "description": "默认参照音文件名（如 g-05.wav）",
+    "default": "g-05.wav"
+  },
+  "emotion_map": {
+    "type": "string",
+    "description": "关键词 → 参照音 的 JSON，例如 {\"元气\":\"g-05.wav\",\"深情\":\"g-11.wav\"}；键以 _ 开头的会被忽略",
+    "default": "{\"元气\":\"g-05.wav\",\"深情\":\"g-11.wav\"}"
+  },
+  "timeout": {
+    "type": "int",
+    "description": "单次合成超时（秒）",
+    "default": 60
+  },
+  "max_chars": {
+    "type": "int",
+    "description": "单次最多合成的字数，超出截断",
+    "default": 200
+  }
+}
