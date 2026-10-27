@@ -116,6 +116,25 @@ bash scripts/install-clips.sh /path/to/CosyVoice/refs/elysia
 
 情绪→参照音的映射写在 [`config/emotion-map.json`](config/emotion-map.json)，插件配置项 `emotion_map` 可以直接粘这个 JSON。留空就用 `default_ref`。
 
+## 其它能力要装什么插件
+
+**本仓库只自带「语音」一个插件。** 人格协议里写的表情包、拍一拍、点歌、改昵称、记忆、群管、网页搜索，都需要另装；查余额这类能力 AstrBot 根本没有。
+
+| 能力 | 实现方式 | 插件 |
+|------|----------|------|
+| 发语音 | ✅ 自带 | 本项目 `astrbot_plugin_elysia_voice` |
+| 表情包 / 斗图 | 🔌 需装 | [meme_manager_lite](https://github.com/ctrlkk/astrbot_plugin_meme_manager_lite)、[smart_imagechat_hub](https://github.com/QingchenWait/astrbot_plugin_smart_imagechat_hub) |
+| 看懂群友发的图 | ✅ 原生 | 换多模态模型即可 |
+| 拍一拍 | 🔌 需装 | [litepoke](https://github.com/kazamisama/astrbot_plugin_litepoke)、[pokepro](https://github.com/Zhalslar/astrbot_plugin_pokepro) |
+| 长期记忆 | 🔌 需装 | [astrbot_plugin_memory](https://github.com/Bluezeamer/astrbot_plugin_memory) |
+| 禁言 / 撤回 / 踢人 | 🔌 需装 | [QQAdmin](https://github.com/Zhalslar/astrbot_plugin_QQAdmin)（仅 aiocqhttp） |
+| 点歌 | 🔌 需装 | [astrbot_plugin_music](https://github.com/Zhalslar/astrbot_plugin_music) |
+| 网页搜索 / 读网页 | 🔌 需配 | AstrBot 内置联网搜索，或 [grok_web_search](https://github.com/piexian/astrbot_plugin_grok_web_search) |
+| 改昵称 / 换头像 | 🔌 需装 | [qqprofile](https://github.com/Zhalslar/astrbot_plugin_qqprofile) |
+| 查余额 | ❌ 不存在 | 原 DSH 桥接特有，建议删掉该节 |
+
+> 装之前请先看 [docs/05-能力与插件对照.md](docs/05-能力与插件对照.md)：里面有每项的风险、以及**没装插件时怎么让人格闭嘴**（不然模型会假装发过表情包）。
+
 ## 目录结构
 
 ```
@@ -140,6 +159,7 @@ elysia-astrbot/
 | 部署 CosyVoice / GPT-SoVITS | [docs/02-语音引擎部署.md](docs/02-语音引擎部署.md) |
 | 配插件、改触发词、接自己写的 TTS | [docs/03-AstrBot配置.md](docs/03-AstrBot配置.md) |
 | 三个提示词文件怎么选、怎么注入 | [docs/04-提示词说明.md](docs/04-提示词说明.md) |
+| **表情包/点歌/群管这些能力要装什么** | [docs/05-能力与插件对照.md](docs/05-能力与插件对照.md) |
 | 人格为什么这么写 | [docs/reference/](docs/reference/)（ELY_PERSONA / ELY_ANALYSIS / 台词库） |
 
 ## 常见问题
